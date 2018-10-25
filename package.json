@@ -3,9 +3,16 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "bulma": "^0.7.2",
+    "bulma-extensions": "3.0.0",
+    "moment": "2.22.2",
+    "node-sass": "^4.9.4",
     "react": "^16.6.0",
     "react-dom": "^16.6.0",
-    "react-scripts": "2.0.5"
+    "react-helmet": "5.2.0",
+    "react-router-dom": "^4.4.0-beta.4",
+    "react-scripts": "2.0.5",
+    "styled-components": "4.0.2"
   },
   "scripts": {
     "start": "react-scripts start",

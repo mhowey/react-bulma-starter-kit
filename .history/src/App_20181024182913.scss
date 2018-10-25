@@ -1,0 +1,49 @@
+* {
+  /* Colors */
+  --red: #c03;
+  --white: #fff;
+  --dark-grey: #666666;
+  --border-grey: #d2d2d2;
+  --placeholder-red: #b40000;
+}
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 10vh;
+}
+@keyframes bulma-logo {
+  from {background-color: transparent;}
+  to {background-color:blue;}
+}
+.Bulma-logo {
+  height: 10vh;
+  animation-name: bulma-logo;
+  animation-duration: 4s ;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: var(--dark-grey);
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
