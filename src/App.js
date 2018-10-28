@@ -1,111 +1,61 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import bulma from './bulma-logo.png';
+// import logo from './logo.svg';
+// import bulma from './bulma-logo.png';
 import './App.scss';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
-import One from './components/pages/One'
-import Dropdowns from './components/pages/Dropdowns'
+import { Link } from 'react-router-dom'
+import { Switch, Route, Redirect } from 'react-router'
 import Navbar from './components/Navbar'
 
-const Two = () => 
-<div className='two'>
-  <h1>This is Component "Two"</h1>
-  <p>This is some text on the page.</p>
-</div>
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faGhost, faCoffee, faPencilAlt } from '@fortawesome/free-solid-svg-icons'
 
-const Three = () => 
-<div className='three'>
-  <h1>This is Component "Three"</h1>
-  <p>This is some text on the page.</p>
-</div>
+import Formatting from './components/pages/Formatting'
+import Dropdowns from './components/pages/Dropdowns'
+// import NoMatch from './components/pages/NoMatch'
+import Containers from './components/pages/Containers'
 
-const Four = () => 
-<div className='four'>
-  <h1>This is Component "Four"</h1>
-  <p>Church-key kickstarter williamsburg fanny pack. Beard ramps flexitarian narwhal. Ramps polaroid hashtag mustache.</p>
-</div>
+library.add(faGhost, faCoffee, faPencilAlt)
 
+const routes = [
+  { path:'/', component: 'Home', exact: true },
+  { path:'/bulma-reactd-dropdowns', component: 'Dropdowns', exact: true },
+]
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <header>
-          <Navbar />
-        </header>
-        <section class="hero">
-            <div class="hero-body">
-              <div class="container">
-                <h1 class="title">
-                  Bulma &amp; create-react-app Starter
-                </h1>
-                <h2 class="subtitle">
-                  An application starter kit using create-react-app and Bulma css framework.
-                </h2>
-              </div>
-            </div>
-          </section>
-          
-        
-        
-
-
-<div class="box">
-  <article class="media">
-    <div class="media-left">
-      <figure class="image is-128x128">
-        <img src={bulma} className="Bulma-logo" alt="logo" />
-        <img src={logo} className="App-logo" alt="logo" />
-      </figure>
-    </div>
-    <div class="media-content">
-      <div class="content">
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean efficitur sit amet massa fringilla egestas. Nullam condimentum luctus turpis.
-          <Route path="/bulma-dropdowns" component={Dropdowns} />
-        </p>
-      </div>
-      <nav class="level is-mobile">
-        <div class="level-left">
-          <a class="level-item" aria-label="reply">
-            <span class="icon is-small">
-              <i class="fas fa-reply" aria-hidden="true"></i>
-            </span>
-          </a>
-          <a class="level-item" aria-label="retweet">
-            <span class="icon is-small">
-              <i class="fas fa-retweet" aria-hidden="true"></i>
-            </span>
-          </a>
-          <a class="level-item" aria-label="like">
-            <span class="icon is-small">
-              <i class="fas fa-heart" aria-hidden="true"></i>
-            </span>
-          </a>
-        </div>
-      </nav>
-    </div>
-  </article>
-</div>
-          <div className='card'>
+      <span>
+        <Navbar />
+          <div className='card'>  
             <div className='card-header card-header-title'>
-              <button><Link to={`/bulma-dropdowns`}>Dropdowns</Link></button> | 
-              <button><Link to={`/two`}>Route Two</Link></button> |
-              <button><Link to={`/three`}>Route Three</Link></button>
-            </div>
-            <div class="tabs is-large is-centered">
-              <ul>
-                <li><Link to={`/bulma-dropdowns`}>Dropdowns</Link></li>
-                <li><Link to={`/two`}>Two</Link></li>
-                <li><Link to={`/three`}>Three</Link></li>
-                <li><Link to={`/four`}>Four</Link></li>
-              </ul>
+              <button className='button is-warning'><FontAwesomeIcon icon="pencil-alt" /> <Link to={`/bulma-react-content-formatting`}> Formatting</Link></button> 
+              <button className='button is-primary'><FontAwesomeIcon icon="ghost" /> <Link to={`/bulma-react-dropdowns`}> Dropdowns</Link></button> 
+              <button className='button is-primary'><FontAwesomeIcon icon="coffee" /> <Link to={`/bulma-react-containers`}>Containers</Link></button> 
+              <button className='button is-primary'><FontAwesomeIcon icon="pencil-alt" /><Link to={`/three`}>Route Three</Link></button>
             </div>
             <div className='card-content'>
-              <Route path="/one" component={One} />
-              <Route path="/two" component={Two} />
-              <Route path="/three" component={Three} />
-              <Route path="/four" component={Four} />
+            <Switch>
+             <Route exact path="/" render={() => (
+                  <Redirect to="/bulma-react-content-formatting"/>
+                )
+              }/>
+              <Route exact path='/bulma-react-content-formatting' component={Formatting} />
+              <Route exact path='/bulma-react-dropdowns' component={Dropdowns} />
+              <Route exact path='/bulma-react-containers' component={Containers} />
+              
+              /** Two options for the fall-through routing...
+              Commented out Route to NoMatch component is essentially a "404 page", make sure you uncomment the import for it above.
+              
+              Then uncomment the Route below with no specified path parameter below and this will load the NoMatch component as the fall-through
+              The NoMatch page content can be modified in this file: ./components/pages/NoMatch.js
+               */
+              {/* <Route component={NoMatch} /> */}
+              /** if you use the NoMatch component, there is no harm in leaving the Redirect below
+              because the Switch will have already executed on the NoMatch component Route
+               */
+              <Redirect to="/bulma-react-content-formatting"/>
+            </Switch>
             </div>
           </div>
           <a
@@ -116,7 +66,7 @@ class App extends Component {
           >
             Learn React
           </a>
-      </div>
+      </span>
     );
   }
 }
