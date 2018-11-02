@@ -4,7 +4,7 @@
 To provide a complete create-react-app starter kit demonstrating the implementation of various useful components.
 
 ### Get The React Bulma Starter Kit Up and Running...
-##### 1. clone the repository
+##### 1. clone the repo
 ##### 2. npm install
 ##### 3. npm start
 
