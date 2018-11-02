@@ -1,3 +1,15 @@
+# react-bulma-starter-kit
+
+## Project Mission
+To provide a complete create-react-app starter kit demonstrating the implementation of various useful components.
+
+### Get The React Bulma Starter Kit Up and Running...
+##### 1. clone the repository
+##### 2. npm install
+##### 3. npm start
+
+### **** standard create-react-app README.md below here ****
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 Below you will find some information on how to perform common tasks.<br>
