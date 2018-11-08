@@ -1,7 +1,13 @@
 # react-bulma-starter-kit
 
-## Project Mission
-To provide a complete create-react-app starter kit demonstrating the implementation of various useful components.
+#### The react-bulma-starter-kit master branch is deployed here: 
+
+#### [react-bulma.netlify.com](https://react-bulma.netlify.com/)
+
+##### The master repository maintainer is Matt Howey @ [howeydesign.com](https://www.howeydesign.com/)
+
+## Project Goal
+To provide an open-source, that is free to use, copy, fork and modify, complete create-react-app starter kit demonstrating the implementation of various re-useable/useful bulma styled react components.
 
 ### Get The React Bulma Starter Kit Up and Running...
 ##### 1. clone the repo
