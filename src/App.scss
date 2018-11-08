@@ -49,3 +49,28 @@
     transform: rotate(360deg);
   }
 }
+
+body.theme-materia {
+  @import './sass/bulmaswatch/materia.scss';
+}
+body.theme-slate {
+  @import './sass/bulmaswatch/slate.scss';
+}
+body.theme-yeti {
+  @import './sass/bulmaswatch/yeti.scss';
+}
+body.theme-flatly {
+  @import './sass/bulmaswatch/flatly.scss';
+}
+body.theme-litera {
+  @import './sass/bulmaswatch/litera.scss';
+}
+body.theme-spacelab {
+  @import './sass/bulmaswatch/spacelab.scss';
+}
+body.theme-lux {
+  @import './sass/bulmaswatch/lux.scss';
+}
+body.theme-cerulean {
+  @import './sass/bulmaswatch/cerulean.scss'; 
+}
