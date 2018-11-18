@@ -1,13 +1,11 @@
-import React, { Component } from 'react';
-// import logo from './logo.svg';
-// import bulma from './bulma-logo.png';
-import './App.scss';
-import { Link } from 'react-router-dom'
+import React, { Component } from 'react'
+// import logo from '../logo.svg';
+// import bulma from '../bulma-logo.png';
+import './App.scss'
 import { Switch, Route, Redirect } from 'react-router'
 import Navbar from './components/Navbar'
 
 import { library } from '@fortawesome/fontawesome-svg-core'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faGhost, faCoffee, faPencilAlt } from '@fortawesome/free-solid-svg-icons'
 
 import Formatting from './components/pages/Formatting'
@@ -26,15 +24,15 @@ class App extends Component {
     return (
       <span>
         <Navbar />
-          <div className='card'>  
-            <div className='card-header card-header-title'>
+        <div className='card'>  
+          <div className='card-header card-header-title'>
               This is the content card header
-            </div>
-            <div className='card-content'>
+          </div>
+          <div className='card-content'>
             <Switch>
-             <Route exact path="/" render={() => (
-                  <Redirect to="/bulma-react-content-formatting"/>
-                )
+              <Route exact path="/" render={() => (
+                <Redirect to="/bulma-react-content-formatting"/>
+              )
               }/>
               <Route exact path='/bulma-react-content-formatting' component={Formatting} />
               <Route exact path='/bulma-react-dropdowns' component={Dropdowns} />
@@ -44,23 +42,22 @@ class App extends Component {
               <Route exact path='/bulma-react-flexbox-tiles' component={FlexboxTiles} />
               <Route exact path='/bulma-react-columns' component={Columns} />
               
-              /** Two options for the fall-through routing...
+              {/** Two options for the fall-through routing...
               Commented out Route to NoMatch component is essentially a "404 page", make sure you uncomment the import for it above.
-              
               Then uncomment the Route below with no specified path parameter below and this will load the NoMatch component as the fall-through
               The NoMatch page content can be modified in this file: ./components/pages/NoMatch.js
-               */
+              */}
               <Route component={NoMatch} />
-              /** if you use the NoMatch component, there is no harm in leaving the Redirect below
+              {/** if you use the NoMatch component, there is no harm in leaving the Redirect below
               because the Switch will have already executed on the NoMatch component Route
-               */
+              */}
               <Redirect to="/bulma-react-content-formatting"/>
             </Switch>
-            </div>
           </div>
+        </div>
       </span>
-    );
+    )
   }
 }
 
-export default App;
+export default App
